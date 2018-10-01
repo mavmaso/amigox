@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: rails s -b 0.0.0.0
+    volumes:
+      - .:/var/www/amigox
+    ports:
+      - 80:3000
+    links:
+      - db
+    env_file:
+      - .env.docker
+  db:
+    image: postgres:10.3-alpine
+    ports:
+      - 0:5432
+    env_file:
+      .env.docker
+    volumes:
+      - amigox-data:/var/lib/postgresql/data
+volumes:
+  amigox-data:
