@@ -1,21 +1,9 @@
-HOME PAGE
-
-<div class="container text-center">
- ola 
- teste
+<div class="section-main container">
+  <h1>Basic Responsive Menu</h1>
+  <p>Apenas um teste</p>
 </div>
 
-<ul>
-  <% if user_signed_in? %>
-      <li>
-        <a href="#">Usuario: <%= current_user.name %></a>
-      </li>
-      <li>
-          <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
-      </li>
-  <% else %>
-    <li>
-      <%= link_to 'Entrar', new_user_session_path, class: 'nav-link' %>
-    </li>
-  <% end %>
-</ul>
+<div class="container text-center">
+  ola
+  teste
+</div>

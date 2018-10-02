@@ -8,6 +8,6 @@ feature 'User log in' do
     fill_in 'Email', with: usuario.email
     fill_in 'Password', with: usuario.password
     click_on 'Log in'
-    expect(page).to have_content("Usuario: #{usuario.name}")
+    expect(page).to have_content("Usuario: #{usuario.email}")
   end
 end

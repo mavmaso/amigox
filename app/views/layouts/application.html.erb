@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Amigox</title>
+    <title>Amigo X</title>
+    <meta name="description" content="Gerenciador de Amigos Secreto online">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +11,12 @@
   </head>
 
   <body>
+    <%= render partial: 'shared/nav_bar' %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if user_signed_in? %>
+      <p> Usuario: <%= current_user.email %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>

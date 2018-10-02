@@ -1,0 +1,23 @@
+<nav class='cf'>
+  <ul class='cf'>
+    <li>
+      <a href='#initial'>Home Page</a>
+    </li>
+    <li>
+      <a href='#'>Link 1</a>
+    </li>
+    <li>
+      <a href='#'>Link 2</a>
+    </li>
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to 'Entrar', new_user_session_path, class: 'nav-link' %>
+      </li>
+    <% end %>
+  </ul>
+  <a href='#' id='openup'>MENU</a>
+</nav>
