@@ -8,26 +8,45 @@ body {
 	color: #fff;
 }
 
-h1 {
-  font-size: 4em;
-  font-family: 'PT Sans Narrow', sans-serif;
-  line-height: 1.1;
+#banner{
   text-align: center;
-  padding: 10px;
+  background-image: asset-url('home.jpg');
+  background-size: cover;
+  padding: 200px;
+  overflow-y: hidden;
+  color: white;
+  text-shadow: 1px 1px 5px black;
 }
 
-p {
-  font-size: 1.2em;
-  text-align: center;
-  padding: 10px;
+#banner h1 {
+  color: white;
+  font-size: 50px;
 }
 
-/* Utility */
+#banner p {
+  color: white;
+  opacity: 0.8;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
 .container {
-	max-width: 1180px;
-	text-align: center;
-	margin: 0 auto;
-	padding: 0 3rem;
+  text-align: center;
+  margin: 40px;
+  padding: 40px;
+}
+
+.card{
+  padding: 50px;
+  background: rgb(40, 40, 40);
+  font-weight: lighter;
+}
+
+footer {
+  background: rgb(30, 30, 30);
+  color: lightgrey;
+  text-align: center;
+  height: 50px
 }
 
 nav {
@@ -35,7 +54,7 @@ nav {
   width: 100%;
   background-color: #333;
 	color: #eee;
-	position: fixed;
+  position: fixed;
 }
 nav ul {
   padding: 0;
@@ -122,5 +141,3 @@ nav a#openup {
 .cf {
   zoom: 1;
 }
-
-/* For IE 6/7 (trigger hasLayout) */
