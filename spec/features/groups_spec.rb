@@ -15,6 +15,7 @@ feature 'Adding a group' do
     click_on 'Enviar'
     expect(page).to have_content('Adicionado com sucesso')
     expect(page).to have_content(grupo.name)
+    expect(page).to have_content("Email do usuario: #{usuario.email}")
   end
 
   scenario 'and add user into a group' do

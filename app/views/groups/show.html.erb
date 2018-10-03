@@ -1,4 +1,7 @@
 <div style="width:800px; margin:0 auto;">
   <h2><%= @group.name %></h2>
   <h4>Usuarios:</h4>
+  <% @group.user_groups.each do |group| %>
+    <p>Email do usuario: <%= group.user.email %></p>
+  <% end %>
 </div>

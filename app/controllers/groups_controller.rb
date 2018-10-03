@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @groups = Group.all
@@ -12,6 +12,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
+      @group.user_groups.create(user: current_user)
       redirect_to @group, notice: 'Adicionado com sucesso'
     else
       flash[:alert] = 'Não pode ser enviada'
@@ -21,6 +22,10 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+  end
+
+  def invite
+    
   end
 
   private
