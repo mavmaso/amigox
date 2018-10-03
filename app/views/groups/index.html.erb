@@ -1,1 +1,6 @@
-<%= link_to 'Criar', new_group_path, class: 'nav-link' %>
+<div style="width:800px; margin:0 auto;">
+  <% @groups.each do |group| %>
+    <p>Nome: <%= group.name %></p>
+  <% end %>
+  <%= link_to 'Criar', new_group_path, class: 'nav-link' %>
+</div>

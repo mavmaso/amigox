@@ -32,7 +32,7 @@ feature 'User log in' do
     click_on 'Sign up'
     expect(page).to have_content("Usuario: #{usuario.email}")
   end
-  scenario 'and create an account with wrong data' do
+  scenario 'and try to create an account with missing data' do
     usuario = build(:user)
     visit root_path
     click_on 'Entrar'
