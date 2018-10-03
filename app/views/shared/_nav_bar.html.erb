@@ -4,10 +4,10 @@
       <%= link_to 'Home Page', root_path, class: 'nav-link' %>
     </li>
     <li>
-      <a href='#'>Link 1</a>
+      <%= link_to 'Grupos', groups_path, class: 'nav-link' %>
     </li>
     <li>
-      <a href='#'>Link 2</a>
+      <a href='#'>Sorteios</a>
     </li>
     <% if user_signed_in? %>
       <li>
