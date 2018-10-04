@@ -1,6 +1,10 @@
 <div style="width:800px; margin:0 auto;">
   <% @groups.each do |group| %>
+    <br>
     <p>Nome: <%= group.name %></p>
+    <p>ID: <%= group.id %></p>
+    <hr>
+    <br>
   <% end %>
   <%= link_to 'Criar', new_group_path, class: 'nav-link' %>
 </div>
