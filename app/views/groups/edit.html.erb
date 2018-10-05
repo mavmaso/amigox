@@ -1,0 +1,12 @@
+<div style="width:800px; margin:0 auto;">
+<h1>Editar Grupos</h1>
+<%= simple_form_for(@group) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name, label: 'Nome' %>
+  <br>
+  <%= f.submit 'Enviar', class: 'btn btn-primary' %>
+<% end %>
+<br>
+<%= link_to 'Apagar', group_path(@group), method: :delete %>
+<br>
+</div>

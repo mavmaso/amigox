@@ -30,15 +30,17 @@ class GroupsController < ApplicationController
     redirect_to groups_path, notice: 'Apagado com sucesso'
   end
 
-  def invite
+  def edit
     @group = Group.find(params[:id])
-    @user = User.find_by(email: ' ')
-    if @group.save
-      @group.user_groups.create(user: user)
-      redirect_to @group, notice: 'Adicionado com sucesso'
+  end
+
+  def update
+    @group = Group.find(params[:id])
+    if @group.update(group_params)
+      redirect_to @group, notice: 'Editado com sucesso'
     else
       flash[:alert] = 'Não pode ser enviada'
-      render :new_invite
+      render :new
     end
   end
 

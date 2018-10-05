@@ -4,4 +4,7 @@
   <% @group.user_groups.each do |group| %>
     <p>Email do usuario: <%= group.user.email %></p>
   <% end %>
+  <%= link_to 'Convidar', edit_group_path(@group) %>
+  <%= link_to 'Editar', edit_group_path(@group) %>
+  <%= link_to 'Apagar', group_path(@group), method: :delete %>
 </div>
