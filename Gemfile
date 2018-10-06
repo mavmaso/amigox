@@ -41,7 +41,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.18'
 end
 
 group :development, :test do
