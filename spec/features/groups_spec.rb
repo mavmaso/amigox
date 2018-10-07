@@ -81,4 +81,23 @@ feature 'Adding a group' do
     click_on grupo.name
     click_on 'Apagar'
   end
+
+  scenario 'and add user into a group' do
+    grupo = create(:group)
+    usuario = create(:user)
+    convidado = create(:user)
+    visit root_path
+    click_on 'Entrar'
+    fill_in 'Email', with: usuario.email
+    fill_in 'Password', with: usuario.password
+    click_on 'Log in'
+    click_on 'Grupos'
+    click_on grupo.name
+    click_on 'Convidar'
+    fill_in 'Email do convidado', with: convidado.email
+    click_on 'Enviar'
+    expect(page).to have_content('Adicionado com sucesso')
+    expect(page).to have_content(grupo.name)
+    expect(page).to have_content("Email do usuario: #{convidado.email}")
+  end
 end

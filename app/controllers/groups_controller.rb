@@ -49,7 +49,8 @@ class GroupsController < ApplicationController
   end
 
   def invite
-    user = User.find_by(email: params.require(:invite).permit(:email))
+    @group = Group.find(params[:id])
+    user = User.find_by(email: params[:invite][:email])
     user_group = @group.user_groups.create(user: user)
     if user_group.persisted?
       redirect_to @group, notice: 'Adicionado com sucesso'
@@ -64,5 +65,4 @@ class GroupsController < ApplicationController
   def group_params
     params.require(:group).permit(:name)
   end
-
 end

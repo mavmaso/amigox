@@ -1,7 +1,7 @@
 <div style="width:800px; margin:0 auto;">
 <h1>Convidar um novo usuario para o grupo <%= @group.name %></h1>
 <%= simple_form_for :invite, { url: invite_path } do |f| %>
-  <%= f.input :email %>
+  <%= f.input :email, label: 'Email do convidado' %>
   <%= f.submit 'Enviar', class: 'btn btn-primary' %>
 <% end %>
 </div>
