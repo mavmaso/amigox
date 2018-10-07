@@ -3,10 +3,11 @@
 <%= simple_form_for(@group) do |f| %>
   <%= f.error_notification %>
   <%= f.input :name, label: 'Nome' %>
+  <%= f.collection_check_boxes :user_ids, User.all, :id, :email%>
   <br>
   <%= f.submit 'Enviar', class: 'btn btn-primary' %>
 <% end %>
 <br>
-<%= link_to 'Apagar', group_path(@group), method: :delete %>
+<%= link_to 'Apagar', group_path(@group), method: :delete, class: 'btn btn-primary' %>
 <br>
 </div>

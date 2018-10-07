@@ -44,6 +44,22 @@ class GroupsController < ApplicationController
     end
   end
 
+  def invitation
+    @group = Group.find(params[:id])
+  end
+
+  def invite
+    @group = Group.find(params[:id])
+    user = User.find_by(email: params[:invite][:email])
+    user_group = @group.user_groups.create(user: user)
+    if user_group.persisted?
+      redirect_to @group, notice: 'Adicionado com sucesso'
+    else
+      flash[:alert] = 'Não pode ser enviada'
+      render :invitation
+    end
+  end
+
   private
 
   def group_params
