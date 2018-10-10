@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_03_203141) do
+ActiveRecord::Schema.define(version: 2018_10_10_045536) do
+
+  create_table "draws", force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "sender_id"
+    t.integer "receiver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_draws_on_group_id"
+    t.index ["receiver_id"], name: "index_draws_on_receiver_id"
+    t.index ["sender_id"], name: "index_draws_on_sender_id"
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
