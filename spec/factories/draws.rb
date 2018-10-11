@@ -1,5 +1,8 @@
 FactoryBot.define do
   factory :draw do
-    group nil
+    group 
+    user
+    user
+    user
   end
 end

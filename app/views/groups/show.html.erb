@@ -5,6 +5,7 @@
     <p>Email do usuario: <%= group.user.email %></p>
   <% end %>
   <%= link_to 'Convidar', invitation_path(@group), class: 'btn btn-primary' %>
+  <%= link_to 'Sortear', drawing_path(@group), method: :post, class: 'btn btn-primary' %>
   <%= link_to 'Editar', edit_group_path(@group), class: 'btn btn-primary' %>
   <%= link_to 'Apagar', group_path(@group), method: :delete, class: 'btn btn-primary' %>
 </div>

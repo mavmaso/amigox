@@ -60,6 +60,12 @@ class GroupsController < ApplicationController
     end
   end
 
+  def drawing
+    @group = Group.find(params[:id])
+    SorteioService.draw(@group)
+    redirect_to @group, notice: 'Sorteio realizado com sucesso'
+  end
+
   private
 
   def group_params
