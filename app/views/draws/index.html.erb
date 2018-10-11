@@ -1,0 +1,13 @@
+<div style="width:800px; margin:0 auto;">
+  <% @draws.each do |draw| %>
+    <br>
+    <% if draw.sender.email == current_user.email %>
+      <p>Nome do grupo do sorteio: <%= link_to(draw.group.name, draw_path(draw)) %></p>
+      <p>Email do usuario: <%= draw.sender.email %></p>
+      <p>Email do seu sorteado: <%= draw.receiver.email %></p>
+      <p> Rodada #<%= draw.id %></p>
+      <hr>
+      <br>
+    <% end %>
+  <% end %>
+</div>
